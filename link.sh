@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=skill-targets.sh
+source "$script_dir/skill-targets.sh"
+
 fail_count=0
 
 log() {
@@ -25,8 +29,6 @@ log "stowing zsh"
 stow zsh || log_error "failed to stow zsh"
 
 # skills: stow the whole skills/ folder into every agent's skills dir, so skills/* -> target/*
-skill_targets=("$HOME/.cursor/skills" "$HOME/.claude/skills")
-
 for target in "${skill_targets[@]}"; do
   log "preparing skills target: $target"
   mkdir -p "$target"

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=skill-targets.sh
+source "$script_dir/skill-targets.sh"
+
 fail_count=0
 
 log() {
@@ -25,8 +29,6 @@ log "unstowing zsh"
 stow -D zsh || log_error "failed to unstow zsh"
 
 # skills: unstow the whole skills/ folder from every agent's skills dir
-skill_targets=("$HOME/.cursor/skills" "$HOME/.claude/skills")
-
 for target in "${skill_targets[@]}"; do
   log "unstowing skills -> $target"
   if ! stow -D --dir=. --target="$target" --ignore='README\.md' skills; then
