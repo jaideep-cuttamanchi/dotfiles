@@ -148,18 +148,22 @@ run_package() {
         brew_install stow || return 1
       fi
 
-      for t in "${stow_targets[@]}"; do
-        stow_package "$t" || return 1
-      done
+      if [ ${#stow_targets[@]} -gt 0 ]; then
+        for t in "${stow_targets[@]}"; do
+          stow_package "$t" || return 1
+        done
+      fi
 
       post_link || return 1
       ;;
     unlink)
       post_unlink || return 1
 
-      for t in "${stow_targets[@]}"; do
-        unstow_package "$t" || return 1
-      done
+      if [ ${#stow_targets[@]} -gt 0 ]; then
+        for t in "${stow_targets[@]}"; do
+          unstow_package "$t" || return 1
+        done
+      fi
       ;;
     *)
       log_error "unknown direction: $direction"

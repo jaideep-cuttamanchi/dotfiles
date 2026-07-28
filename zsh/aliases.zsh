@@ -43,4 +43,19 @@ alias redeploy='make undeploy deploy'
 # =============================================================================
 # tmux
 # =============================================================================
-alias t='tmux'
+# t: attach to an existing tmux session, or create one if none exist
+t() {
+  tmux attach-session 2>/dev/null || tn
+}
+
+# tn [name]: create (or attach to) a tmux session, defaulting to the cwd's name
+tn() {
+  local name="${1:-$(basename "$PWD")}"
+  tmux new-session -A -d -s "$name" -c "$PWD"
+
+  if [ -n "$TMUX" ]; then
+    tmux switch-client -t "$name"
+  else
+    tmux attach-session -t "$name"
+  fi
+}

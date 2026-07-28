@@ -81,6 +81,13 @@ if command -v kubebuilder &> /dev/null; then
 fi
 
 # =============================================================================
+# zoxide - smarter cd
+# =============================================================================
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# =============================================================================
 # Completion System
 # =============================================================================
 # Initialize completion system (must be done after modifying fpath).
