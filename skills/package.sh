@@ -19,7 +19,7 @@ done
 unset _entry
 
 _skill_dirs() {
-  find "$DOTFILES_DIR/skills" -mindepth 3 -maxdepth 3 -name SKILL.md -exec dirname {} \;
+  find "$DOTFILES_DIR/skills" -mindepth 2 -name SKILL.md -exec dirname {} \;
 }
 
 post_link() {
