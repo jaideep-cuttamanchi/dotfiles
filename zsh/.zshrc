@@ -31,3 +31,10 @@ source "${ZCONFIG_DIR}/plugins.zsh"
 source "${ZCONFIG_DIR}/options.zsh"
 source "${ZCONFIG_DIR}/aliases.zsh"
 source "${ZCONFIG_DIR}/tools.zsh"
+
+# Added by Asato-in-a-Box installer
+export PATH="$HOME/bin:$PATH"
+
+# AiB completions (must be before compinit)
+fpath=("/opt/homebrew/share/zsh/site-functions" $fpath)
+autoload -U compinit && compinit
