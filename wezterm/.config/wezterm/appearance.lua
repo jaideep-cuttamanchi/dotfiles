@@ -11,7 +11,7 @@ function M.apply(config)
   })
   config.font_size = 13.0 -- default: 12.0
   config.line_height = 1.15 -- default: 1.0
-  config.harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' } -- default: kern, liga, clig
+  config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- default: kern, liga, clig (off: no ==, !=, -> ligatures)
 
   config.color_scheme = 'Dracula' -- default: unset (built-in colors)
   config.colors = {
