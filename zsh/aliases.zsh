@@ -59,3 +59,10 @@ tn() {
     tmux attach-session -t "$name"
   fi
 }
+
+# =============================================================================
+# Taskwarrior (todo skill)
+# =============================================================================
+alias todo='taskwarrior-tui'
+alias todon='task next'
+alias todoa='task add'

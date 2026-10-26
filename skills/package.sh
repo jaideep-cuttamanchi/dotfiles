@@ -3,6 +3,9 @@
 # shellcheck source=skill-targets.sh
 source "$DOTFILES_DIR/skills/skill-targets.sh"
 
+# Used by the todo skill.
+brew=(task taskwarrior-tui)
+
 # Split targets by kind: "stow" targets go through the generic stow loop in
 # run_package as before; "flatten" targets are handled below via post_link/
 # post_unlink, symlinking each individual skill dir directly instead of the
