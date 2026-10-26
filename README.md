@@ -39,7 +39,7 @@ To remove symlinks:
 | `wezterm` | `~/.config/wezterm` | stow, wezterm, JetBrains Mono Nerd Font | — |
 | `zsh` | `~/.zshrc`, `~/*.zsh` | stow, git, fzf | oh-my-zsh, zsh-vi-mode |
 | `aerospace` | `~/.config/aerospace` | stow, `nikitabobko/tap/aerospace` (cask) | — |
-| `skills` | agent skill dirs (see below) | stow | stows into multiple targets |
+| `skills` | agent skill dirs (see below) | stow, task, taskwarrior-tui | stows into multiple targets |
 
 See per-package READMEs (`aerospace/`, `nvim/`, `tmux/`, `wezterm/`, `zsh/`, `skills/`, `lib/`).
 

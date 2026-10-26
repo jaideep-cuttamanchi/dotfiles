@@ -16,3 +16,4 @@ Reachable only when you type them (`disable-model-invocation: true`).
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
 
 - **[grilling](./grilling/SKILL.md)** — Interview the user relentlessly about a plan or design until every branch of the decision tree is resolved.
+- **[todo](./todo/SKILL.md)** — Capture, prioritise and link ad-hoc work asks in Taskwarrior; view them with `taskwarrior-tui` (aliased `todo`).
